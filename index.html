@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github User Finder</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/scrollbar.css">
+  <script src="/scripts/script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+    integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+    crossorigin="anonymous" defer></script>
+  <script src="/scripts/scrollbar.js"></script>
+</head>
+
+<body class="light">
+
+  <div class="background"></div>
+
+  <div class="container_parent">
+    <nav class="navbar_element container_child">
+      <div class="inner_nav_container">
+        <div class="left_container">
+          <a href="https://www.github.com" class="github_icon">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="right_container">
+          <a class="a fork_me" href="https://www.github.com/Swaroop-D" target="_blank">
+            <i class="fad fa-utensil-fork"></i>
+            <span> Fork my projects!</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="search">
+    <form id="form">
+      <input type="text" class="search_container" id="search_bar" placeholder="Search a username..." spellcheck="false">
+    </form>
+    <div class="results" id="results"></div>
+  </div>
+
+  <div class="error" id="error">
+    <div class="error_block">
+      <div class="top">
+        <img id="illustration" alt="error">
+      </div>
+      <div class="sadness" id="sadness"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+$color: #cccccc;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+a,
+button {
+  user-select: none;
+}
+
+:root {
+  font-size: 1rem;
+}
+
+body {
+  background-color: #222222;
+  overflow-x: hidden;
+}
+
+div.container_parent {
+  width: 100vw;
+  overflow: auto;
+  height: 75px;
+  box-shadow: 0px 5px 10px 0.25rem rgba($color: $color, $alpha: 0.04);
+
+  nav.navbar_element.container_child {
+    width: 1200px;
+    height: 100%;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    div.inner_nav_container {
+      width: 100% !important;
+      display: grid;
+      -ms-grid-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+
+      div.left_container {
+        a.github_icon {
+          font-size: 2.1rem !important;
+          color: $color;
+
+          &:hover,
+          &:active {
+            opacity: 0.75;
+          }
+        }
+      }
+      div.right_container {
+        text-align: right;
+        font-size: 1.25rem;
+
+        a.a.fork_me {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh !important;
+  width: 100vw !important;
+  z-index: -99;
+  pointer-events: none;
+  user-select: none;
+  background-image: url('/img/bg.jpg');
+  background-position: top;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
+.search {
+  max-width: 999px;
+  margin: 0 auto;
+  #form {
+    width: 500px;
+    margin: 50px auto;
+
+    input.search_container {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      font-size: 1.3rem;
+      background: #171717;
+      color: $color;
+      caret-color: $color;
+      border: 1px solid rgba($color: $color, $alpha: 0.25);
+      border-radius: 5px;
+      box-shadow: 0px 2px 10px 0.25rem rgba($color: $color, $alpha: 0.05);
+    }
+  }
+  .results {
+    height: 500px;
+    // background: rosybrown;
+    overflow: auto;
+
+    .top_container {
+      display: flex;
+      padding: 30px;
+      // background: #171717;
+
+      .github_user_pic {
+        pointer-events: none;
+        user-select: none;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: content-box;
+        position: relative;
+        margin: 0 auto;
+        box-shadow: -6.5px -3.5px 15px rgba($color: $color, $alpha: 0.05),
+          6.5px 3.5px 10px rgba($color: #000000, $alpha: 0.15),
+          inset -6.5px -3.5px 10px rgba($color: $color, $alpha: 0.05),
+          inset 6.5px 3.5px 10px rgba($color: #000000, $alpha: 0.15);
+
+        img {
+          height: 85%;
+          width: 85%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+        }
+      }
+      .right {
+        line-height: 2;
+        max-width: 550px;
+        width: 100%;
+
+        .github_user_info {
+          color: $color;
+
+          .username {
+            font-size: 3rem;
+            font-weight: 600;
+            color: $color;
+            text-decoration: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+              text-decoration: none;
+              color: $color;
+            }
+          }
+          .userid {
+            line-height: 2;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+          .user_about {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .bottom_container {
+      width: 100%;
+      .box {
+        display: flex;
+        width: 60%;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: $color;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+// error_block
+.error {
+  width: 100vw;
+  height: 100vh;
+  background: #00000085;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  backdrop-filter: blur(25px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 500ms cubic-bezier(0, 1, 0, 1), opacity 250ms ease;
+  transform: scale(1.1);
+
+  &.error_occured {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+  .error_block {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 450px;
+    padding: 25px;
+    background-color: #171717;
+
+    .top {
+      height: 80%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .sadness {
+      color: $color;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 20px auto;
+    }
+  }
+}
+
+::selection {
+  background: rgba($color: $color, $alpha: 0.15);
+}
