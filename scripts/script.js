@@ -12,9 +12,9 @@
       createUserCard(data)
     } catch (err) {
       if (err.response.status == 404) {
-        errBlock("404, no user found 😟", "/img/404.png")
+        errBlock("404, no user found 😟", "./img/404.png")
       } else {
-        errBlock("Uh, oh! 😥 We've encountered an error...", "/img/error.svg")
+        errBlock("Uh, oh! 😥 We've encountered an error...", "./img/error.svg")
       }
     }
   }

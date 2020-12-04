@@ -79,7 +79,7 @@ div.container_parent {
   z-index: -99;
   pointer-events: none;
   user-select: none;
-  background-image: url('/img/bg.jpg');
+  background-image: url('../img/bg.jpg');
   background-position: top;
   background-size: cover !important;
   background-repeat: no-repeat;
@@ -107,13 +107,11 @@ div.container_parent {
   }
   .results {
     height: 500px;
-    // background: rosybrown;
     overflow: auto;
 
     .top_container {
       display: flex;
       padding: 30px;
-      // background: #171717;
 
       .github_user_pic {
         pointer-events: none;
