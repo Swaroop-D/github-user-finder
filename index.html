@@ -44,11 +44,31 @@
     <form id="form">
       <input type="text" class="search_container" id="search_bar" placeholder="Search a username..." spellcheck="false">
     </form>
-    <div class="results" id="results"></div>
+    <div class="results" id="results">
+      <div class="top_container">
+        <div class="github_user_pic">
+          <img id="user_pic">
+        </div>
+        <div class="right">
+          <div class="github_user_info">
+            <a target="_blank" class="username" id="username"></a>
+            <div class="userid"></div>
+            <div class="user_about" id="user_about"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_container">
+        <div class="box">
+          <div class="repositories" id="repositories"></div>
+          <div class="user_followers" id="user_followers"></div>
+          <div class="user_follow" id="user_follow"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="error" id="error">
-    <div class="error_block">
+    <div class="error_block" id="error_block">
       <div class="top">
         <img id="illustration" alt="error">
       </div>
