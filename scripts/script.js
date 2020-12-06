@@ -115,16 +115,4 @@
       }
     });
   });
-
-  //? error card intereactions
-  let error_block = document.querySelector("#error_block");
-  error_block.addEventListener("mousemove", (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX);
-    yAxis = (window.innerHeight / 2 - e.pageY);
-    error_block.classList.add("hover_3d"),
-      error_block.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translate(-50%, -50%)`;
-  });
-  error_block.addEventListener("mouseleave", () => {
-    error_block.style.transform = `rotateY(0deg) rotateX(0deg) translate(-50%, -50%)`;
-  });
 })();
