@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Github User Finder</title>
+  <title id="document_title">Github User Finder</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
     rel="stylesheet">
@@ -16,6 +16,8 @@
     integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
     crossorigin="anonymous" defer></script>
   <script src="./scripts/scrollbar.js"></script>
+  <script src="./scripts/intereactions.js" defer></script>
+  <link rel="shortcut icon" href="./img/github.svg" id="favicon" type="image/x-icon">
 </head>
 
 <body class="light">
@@ -68,11 +70,13 @@
   </div>
 
   <div class="error" id="error">
-    <div class="error_block" id="error_block">
-      <div class="top">
-        <img id="illustration" alt="error">
+    <div class="error_container">
+      <div class="error_block" id="error_block" data-tilt data-tilt-max="15" data-tilt-perspective="750">
+        <div class="top">
+          <img id="illustration" alt="error">
+        </div>
+        <div class="sadness" id="sadness"></div>
       </div>
-      <div class="sadness" id="sadness"></div>
     </div>
   </div>
 

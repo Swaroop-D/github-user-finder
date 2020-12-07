@@ -2,7 +2,9 @@
   const API_SERVER = "https://api.github.com/users/",
     search = document.getElementById("search_bar"),
     form = document.getElementById("form"),
-    result = document.getElementById("results");
+    result = document.getElementById("results"),
+    favicon = document.getElementById("favicon"),
+    document_title = document.getElementById("document_title");
 
   const getUser = async (username) => {
     try {
@@ -43,6 +45,9 @@
       </div>
     `
 
+    favicon.setAttribute("href", `${user.avatar_url}`);
+    document_title.innerHTML = `${user.name} • Github User Finder`;
+
     function calcRepo() {
       let output;
       if (user.public_repos < 2) {
@@ -82,8 +87,12 @@
     illustration.setAttribute("src", source);
     sadness.innerHTML = specification;
     error_container.classList.add("error_occured");
+    favicon.setAttribute("href", "./img/something_went_wrong.svg");
+    document_title.innerHTML = "Uh oh, errors cought you...";
     error_container.addEventListener("mousedown", e => {
-      e.target.classList.remove("error_occured")
+      e.target.classList.remove("error_occured");
+      favicon.setAttribute("href", "./img/github.svg");
+      document_title.innerHTML = "Github User Finder";
     })
   }
 
@@ -114,17 +123,5 @@
         autoHideDelay: 1000
       }
     });
-  });
-
-  //? error card intereactions
-  let error_block = document.querySelector("#error_block");
-  error_block.addEventListener("mousemove", (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX);
-    yAxis = (window.innerHeight / 2 - e.pageY);
-    error_block.classList.add("hover_3d"),
-      error_block.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translate(-50%, -50%)`;
-  });
-  error_block.addEventListener("mouseleave", () => {
-    error_block.style.transform = `rotateY(0deg) rotateX(0deg) translate(-50%, -50%)`;
   });
 })();
