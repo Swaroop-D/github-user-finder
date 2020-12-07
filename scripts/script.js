@@ -4,7 +4,9 @@
     form = document.getElementById("form"),
     result = document.getElementById("results"),
     favicon = document.getElementById("favicon"),
-    document_title = document.getElementById("document_title");
+    document_title = document.getElementById("document_title"),
+    attributes = document.querySelector("#attributes"),
+    attr = document.getElementById("attr");
 
   const getUser = async (username) => {
     try {
@@ -107,6 +109,13 @@
     }
   })
 
+  attributes.addEventListener("click", () => {
+    attr.classList.add("attr_active")
+  });
+  attr.addEventListener("click", () => {
+    attr.classList.remove("attr_active")
+  })
+
   //! scollbar
   document.addEventListener("DOMContentLoaded", function () {
     OverlayScrollbars(document.querySelectorAll('body'), {
@@ -116,7 +125,7 @@
         autoHideDelay: 1000
       }
     });
-    OverlayScrollbars(result, {
+    OverlayScrollbars(document.querySelectorAll('#attr_block'), {
       className: "os-theme-light",
       scrollbars: {
         autoHide: "leave",
